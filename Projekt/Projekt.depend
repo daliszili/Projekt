@@ -1,0 +1,21 @@
+# depslib dependency file v1.0
+1589222588 source:d:\sapi\adatszerk\projekt\main.c
+	<stdio.h>
+	<stdlib.h>
+	"jatek.c"
+	<time.h>
+	<conio.h>
+	<stdbool.h>
+	<Windows.h>
+
+1589218604 d:\sapi\adatszerk\projekt\jatek.h
+	<stdio.h>
+
+1589222498 d:\sapi\adatszerk\projekt\jatek.c
+	<stdio.h>
+	"jatek.h"
+	<stdbool.h>
+	<stdlib.h>
+	<conio.h>
+	<Windows.h>
+
