@@ -1,5 +1,5 @@
 
-Jani és az almák
+				Jani és az almák
 
 A játék arról fog szólni, hogy főhősünk Jani(játékban J-vel jelöljük) elkezed almákat(A betű jelzi) gyűjteni.
 Barátai körbeveszik és pénzt kínálnak neki, hogy abból vásároljon magának almát az üzletből, így 
@@ -11,7 +11,7 @@ A játék lényege, segítsünk Janinak leszedni az almát anélkül, hogy bará
 
 A programban a következő alprogramokat szeretném létrehozni egy header állományban:
 --egy olyan elem megalkotasa, amelynek 2 paramétere van,tehát 1 pontot ír le
---egy olyan elem megalkotása, amely az elöbb említett típusból álló tömb
 --Jani írányítása
 --Pálya megrajzolása
 --Játék szabályai vagyis játékmenet
+--Mindez meghivasa kulonbozo szintekre

@@ -8,32 +8,55 @@
 
 int main()
 {
+    Jatekleiras();
+    //palya magassaganak es szelessegenek ertekei
+    int m=15,sz=30;
 
-    srand ( time(NULL) );
+    //olyan ertek, amelynek beolvasasaval indithatjuk a jatekot
+    int kezd;
+    printf("\n\n        Szeretnel segiteni Janinak ?    (ha igen akkor nyomj 1-est, ha nem akkor meg 0-ast)\n");
+    scanf("%i",&kezd);
+    //ha a beolvasott ertek 0, akkor mar is vege jateknak
+    if(kezd==0){
+    system("CLS");
+    printf("\n\n\n           Jani finom almait elloptak penzes baratai :(\n\n\n");
+    return 0;
+    }
+
+// jatek tobbszoros meghivasanak lehetosege, annak aki ujra szeretne jatszani
+            while(kezd!=0){
+    switch (kezd) {
+case 1:    srand ( time(NULL) );
     bool GameOver=false;
-    Elem* snake;
+    pont=0;
+
+    //kulonbozo elemek inicializalasa es koordinatak megadasa
+    Elem* Jani;
     Elem* akadaly;
-    Elem* kaja;
-    Tarsoly* tarsoly;
-    snake=Create(5,5);
-    tarsoly=Createtarsoly(1);
-    int m=15,sz=45;
-    akadaly=Create(rand()%sz,rand()%m);
-    kaja=Create(rand()%sz,rand()%m);
+    Elem* akadaly1;
+    Elem* akadaly2;
+    Elem* Alma;
+    Jani=Create(5,5);
+    akadaly=Create((rand()%28)+1,(rand()%14)+1);
+    akadaly1=Create((rand()%28)+1,(rand()%14)+1);
+    akadaly2=Create((rand()%28)+1,(rand()%14)+1);
+    Alma=Create((rand()%28)+1,(rand()%14)+1);
+    system("cls");
 
-    if(kaja->x==0 || kaja->x==sz-1 || kaja->y==0 ||kaja->y==m || kaja->x==kaja->x || kaja->x==snake->x || kaja->x==snake->x || akadaly->y==kaja->y || akadaly->y==snake->y || kaja->y==snake->y){
-        while(!(kaja->x==0 || kaja->x==sz-1 || kaja->y==0 || kaja->y==m || kaja->x==kaja->x || akadaly->x==kaja->x || akadaly->x==snake->x || kaja->x==snake->x || akadaly->y==kaja->y || akadaly->y==snake->y || kaja->y==snake->y))
-   {akadaly=Create(rand()%sz,rand()%m);
-    kaja=Create(rand()%sz,rand()%m);
-    }}
-    while(!GameOver){
-               Iranyitas( m, sz, snake, akadaly, kaja,tarsoly);
-        DrawFrame( m, sz,snake,akadaly,kaja,tarsoly);
-      GameOver=Szabaly(m, sz, snake, akadaly, kaja,tarsoly);
-// tarsoly=Tarsolybeill( snake, tarsoly, kaja);
-
-  // Sleep(50);
-
+    // jatek inditasa, egyre nehebb szinteken
+    Szint( m, sz, Jani, akadaly, Alma, akadaly1, akadaly2, GameOver);
+    kezd=0;
+    break;
+//mas billentyuzet leuteset jelezni fogja
+default:
+printf("\nHibas parancs!");
+kezd=0;
+break;
 }
+
+printf("\nSzeretnel meg jatszani?:\n\t0 Nem \n\t1 Igen\n");
+scanf("%i", &kezd);
+system("CLS");
+                        }
     return 0;
 }
